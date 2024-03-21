@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.O.K.A. Booktory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/33c0cc8c11.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <article class="layout">
+        <aside class="layout__aside-a">
+            <p>Booktory</p>
+        </aside>
+
+        <main class="layout__main">
+            <ul class="layout__main__books">
+                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
+                <hr>
+                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
+                <hr>
+                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
+            </ul>
+        </main>
+
+        <section class="layout_aside-b">
+            <form class="layout__aside-b__form">
+                <input type="text" class="layout__aside-b__form__input" placeholder="Title">
+                <br>
+                <input type="text" class="layout__aside-b__form__input" placeholder="Author">
+                <br>
+                <input type="text" class="layout__aside-b__form__input" placeholder="Image URL">
+                <br>
+                <input type="text" class="layout__aside-b__form__input" placeholder="Price">
+                <br>
+                <select name="inventory" id="inventory">
+                    <option value="In-Stock">In Stock</option>
+                    <option value="Out-of-Stock">Out of Stock</option>
+                </select>
+                <br>
+                <button>Add Book</button>
+            </form>
+        </section>
+    </article>
+    <script src="script.js"></script>
+</body>
+</html>

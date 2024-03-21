@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #F2ECE6;
+}
+article {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 10% 45% 45%;
+    border: 2px solid black;
+    height: 500px;
+    width: 1100px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+form {
+    grid-template-columns: 2/3;
+    border-left: 2px solid black;
+    padding-top: 50px;
+    padding-left: 30px;
+    border: none;
+}
+aside {
+    color: #0C044B;
+    font-size: 50px;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+}
+button {
+    color: white;
+    background-color: #0C044B;
+}
