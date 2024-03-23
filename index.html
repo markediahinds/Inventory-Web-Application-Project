@@ -15,23 +15,20 @@
 
         <main class="layout__main">
             <ul class="layout__main__books">
-                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
-                <hr>
-                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
-                <hr>
-                <li><span><i class="fa-solid fa-trash-can"></i></span></li>
+               <li>Book</li>
             </ul>
         </main>
-
+      
+          
         <section class="layout_aside-b">
-            <form class="layout__aside-b__form">
-                <input type="text" class="layout__aside-b__form__input" placeholder="Title">
+            <form name="submit-to-google-sheet" class="layout__aside-b__form">
+                <input type="text" name="Title" class="layout__aside-b__form__input" placeholder="Title" required>
                 <br>
-                <input type="text" class="layout__aside-b__form__input" placeholder="Author">
+                <input type="text" name="Author" class="layout__aside-b__form__input" placeholder="Author" required>
                 <br>
-                <input type="text" class="layout__aside-b__form__input" placeholder="Image URL">
+                <input type="text" name="URL" class="layout__aside-b__form__input" placeholder="Image URL" required>
                 <br>
-                <input type="text" class="layout__aside-b__form__input" placeholder="Price">
+                <input type="text" name="Price" class="layout__aside-b__form__input" placeholder="Price" required>
                 <br>
                 <select name="inventory" id="inventory">
                     <option value="In-Stock">In Stock</option>
@@ -42,6 +39,17 @@
             </form>
         </section>
     </article>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxZrVTaYaTsWM8w9wyzDXRwB0OfSjIecOnpg5XiyTPBQP3DXbwcEoIibZKozNR4diGzCw/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     <script src="script.js"></script>
 </body>
 </html>
