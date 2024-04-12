@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.O.K.A. Booktory</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/33c0cc8c11.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Artifika:regular" rel="stylesheet" />
 </head>
+
 <body>
-    <article class="layout">
-        <aside class="layout__aside-a">
+    <article class="container">
+
+        <aside class="aside">
             <p>Booktory</p>
         </aside>
 
-        <main class="layout__main">
-            <ul class="layout__main__books">
-               <li>Book</li>
-            </ul>
-        </main>
-      
-          
-        <section class="layout_aside-b">
-            <form name="submit-to-google-sheet" class="layout__aside-b__form">
-                <input type="text" name="Title" class="layout__aside-b__form__input" placeholder="Title" required>
+        <ul class="bookList">
+            <li class="book">
+                <img src="images/breathe_book.jpeg" class="image" alt="book: the healing power of the breath by husband and wife, Dr. Richard P. Brown and Dr. Patricia L. Gerbarg" />
+                <div class="bookInfo">
+                    <p class="bookInfo__title">The Healing Power of the Breath</p>
+                    <p class="bookInfo__author"><a href="https://www.breath-body-mind.com/" target="_blank">Richard P. Brown MD, Patricia L. Gerberg</a></p>
+                    <p class="bookInfo__inventory">In Stock</p>
+                    <p class="bookInfo__price">$4.50</p>
+                </div>
+                <i class="fa-regular fa-trash-can trash"></i>
+            </li>
+            <li class="book">
+            <img src="images/subconscious_book.jpeg" class="image" alt="book: the power of your subconscious mind by Dr. Joseph Murphy, an international bestseller"/>
+                    <div class="bookInfo">
+                        <p class="bookInfo__title">The Power of Your Subconscious Mind</p>
+                        <p class="bookInfo__author"><a href="https://youtube.com/playlist?list=PL9yXJnyEtIyhNBDMoEMMWsgrBQWS5PbS0&si=9I3wxp-0LUa2weOA" target="_blank">Dr. Joseph Murphy</a></p>
+                        <p class="bookInfo__inventory">In Stock</p>
+                        <p class="bookInfo__price">$6.00</p>
+                    </div>
+                    <i class="fa-regular fa-trash-can trash"></i>
+            </li>
+        </ul>
+        <section class="bookForm">
+            <form name="submit-to-google-sheet" class="form">
+                <input type="text" name="Title" class="form__title" placeholder="Title" required />
                 <br>
-                <input type="text" name="Author" class="layout__aside-b__form__input" placeholder="Author" required>
+                <input type="text" name="Author" class="form__author" placeholder="Author" required />
                 <br>
-                <input type="text" name="URL" class="layout__aside-b__form__input" placeholder="Image URL" required>
+                <input type="text" name="URL" class="form__url" placeholder="Image URL" required />
                 <br>
-                <input type="text" name="Price" class="layout__aside-b__form__input" placeholder="Price" required>
+                <input type="text" name="Price" class="form__price" placeholder="Price" />
                 <br>
-                <select name="inventory" id="inventory">
+                <select name="inventory" class="form__inventory" id="inventory">
                     <option value="In-Stock">In Stock</option>
                     <option value="Out-of-Stock">Out of Stock</option>
                 </select>
                 <br>
-                <button>Add Book</button>
+                <button class="submit">Add Book</button>
             </form>
         </section>
     </article>
-    <script>
+
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxZrVTaYaTsWM8w9wyzDXRwB0OfSjIecOnpg5XiyTPBQP3DXbwcEoIibZKozNR4diGzCw/exec'
         const form = document.forms['submit-to-google-sheet']
-      
+
         form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => console.log('Success!', response))
-            .catch(error => console.error('Error!', error.message))
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
         })
-      </script>
+    </script> -->
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
