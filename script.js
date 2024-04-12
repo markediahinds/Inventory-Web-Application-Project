@@ -42,6 +42,9 @@ function createBook (bookObj) {
     const img = document.createElement('img');
     const bookInfo = document.createElement('div');
    
+    const randomUrl = document.createElement("input");
+    randomUrl.setAttribute("type", "url");
+
     const trash = document.createElement('i');
     trash.addEventListener('click', (e) => {
         e.target.parentElement.remove();
@@ -54,7 +57,6 @@ function createBook (bookObj) {
 
     book.setAttribute("class", "book");
     img.setAttribute("class", "image");
-    img.setAttribute("src", "bookObj.url");
     bookInfo.setAttribute("class", "bookInfo");
     trash.classList.add("fa-regular", "fa-trash-can", "trash");
     newTitle.setAttribute("class", "bookInfo__title");
@@ -63,26 +65,27 @@ function createBook (bookObj) {
     newPrice.setAttribute("class", "bookInfo__price");
     // trash.setAttribute("class" [_______])
 
-    title.innerText = bookObj.title;
-    author.innerText = bookObj.author;
-    url.innerText = bookObj.url;
-    inventory.innerText = bookObj.inventory;
-    price.innerText = bookObj.price;
+    newTitle.innerText = title;
+    newAuthor.innerText = author;
+    img.src = url;
+    inventory.innerText = stock;
+    newPrice.innerText = price;
 
     book.append(img, bookInfo, trash);
-    bookInfo.append(title, author, inventory, price);
+    bookInfo.append(newTitle, newAuthor, inventory, newPrice);
 
-    addBook(book) // package as a parameter
+    // addBook(book) // package as a parameter
+    bookList.append(book);
 }
 
-function addBook (book) {
-    const addBookBtn = document.querySelector("button");
+// function addBook (book) {
+//     const addBookBtn = document.querySelector("button");
      
-    addBookBtn.addEventListener('click', (e) => {
+//     addBookBtn.addEventListener('click', (e) => {
     
-        bookList.append(book);
-    })
-}
+//         bookList.append(book);
+//     })
+// }
 
 // For adding an event listener to the trash icons that appear when th page is first loaded
 const trashIcon = document.querySelectorAll(".trash");
